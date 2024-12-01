@@ -1,24 +1,27 @@
 {
   "manifest_version": 3,
-  "name": "Form Input Lister",
+  "name": "Formina",
   "version": "1.0",
-  "description": "Lists all form inputs on any webpage.",
-  "permissions": ["activeTab"],
+  "description": "Lists all form inputs and cookies on any webpage.",
+  "permissions": ["activeTab","storage", "cookies"],
   "background": {
     "service_worker": "background.js"
   },
+  "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["assets/js/jquery.js","content.js"]
     }
   ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
+      "16": "assets/icons/icon16.png",
+      "19": "assets/icons/icon19.png",
+      "48": "assets/icons/icon48.png",
+      "64": "assets/icons/icon64.png",
+      "128": "assets/icons/icon128.png"
     }
   }
 }

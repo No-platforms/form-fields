@@ -1,0 +1,39 @@
+popup {
+    min-width: 780px !important;
+    display: block;
+    border-radius: 5px !important;
+    padding: 10px;
+    background-color: #f4f4f4;
+    height: 500px;
+}
+body{
+    background-color: #f4f4f4;
+
+}
+code {
+    direction: ltr;
+    background: black;
+    display: block;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+    text-wrap: auto;
+    line-height: 2;
+    min-height: 40px;
+    max-height: 440px;
+    overflow-y: auto;
+    color: white;
+}
+li.form-info-item {
+    font-weight: 900;
+    font-size: larger;
+    margin-bottom: 11px;
+    padding-bottom: 11px;
+    color: black;
+}
+li.form-info-item code {
+    margin-top: 6px;
+}
+h1 {
+    margin-bottom: 20px;
+}

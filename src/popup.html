@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Form Inputs</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Formina</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/tabs.css">
 </head>
 <body>
-<h1>Form Inputs</h1>
-<ul id="input-list"></ul>
+<popup>
+    <h1>Formina: Form Information</h1>
+
+
+
+<div id="container" class="container">
+    <div id="tabs" class="tabs-container">
+
+        <div class="tabs">
+            <a id="tab1" data-tab="1" class="tab">Raw</a>
+            <a id="tab2" data-tab="2" class="tab">Json</a>
+            <a id="tab3" data-tab="3" class="tab">Form</a>
+            <a id="tab4" data-tab="4" class="tab">Cookies</a>
+            <a id="tab5" data-tab="5" class="tab">generators</a>
+        </div>
+
+        <div class="content">
+            <div id="tabcontent1" data-tab="1" class="tabcontent">
+                <ul id="input-list"></ul>            
+            </div>
+            <div id="tabcontent2" data-tab="2" class="tabcontent">
+                <code id="json-output"></code>
+            </div>
+            <div id="tabcontent3" data-tab="3" class="tabcontent">
+                <ul id="form-info"></ul>
+            </div>
+            <div id="tabcontent4" data-tab="4" class="tabcontent">
+                <ul id="cookies-list"></ul>
+            </div>
+            <div id="tabcontent5" data-tab="5" class="tabcontent">
+                <ul id="generators-list">
+                    <li>
+                        <button id="postman-generator">Postman</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+  
+    <div class="dark-mode-switch">
+        <label class="switch-label" for="dark-mode-switch">Dark mode</label>
+        <label class="switch">
+            <input type="checkbox" id="dark-mode-switch">
+            <span class="slider round"></span>
+        </label>
+    </div>
+  
+</div>
+
+
+
+</popup>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/generators.js"></script>
+<script src="assets/js/tabs.js"></script>
 <script src="popup.js"></script>
 </body>
 </html>
