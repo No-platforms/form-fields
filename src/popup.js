@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log("Postman generator clicked");
         
         
-                    const postmanCollection = generatePostmanCollection(data.form.action, data.form.method, cookieListd, [], inputs);
+                    const postmanCollection = generatePostmanCollection(data.form.action, data.form.method, cookieList, [], inputs);
                     generateDownload(JSON.stringify(postmanCollection), "postman_collection", "json");
                 });
         
