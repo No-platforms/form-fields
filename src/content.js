@@ -29,7 +29,7 @@ inputs.each(function() {
     
 
 
-    const closest=$(this).closest('.form-group');
+    const closest=$(this).closest('.form-group,input-group');
     let label='';
     if(closest.length>0){
         label=closest.find('label').text();

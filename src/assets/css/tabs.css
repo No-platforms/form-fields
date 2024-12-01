@@ -66,9 +66,9 @@
 /* Styling for active tab */
 .tabs a.active {
     background-color: #f4f4f4;
-    color: #bdbdbd;
+    color: #898484;
     cursor: default;
-    padding: 14px 22px 10px 26px;
+    padding: 10px 21px 10px 16px;
     background: #f4f4f4;
     box-shadow: inset 3px 3px 5px #cbcbcb, 
                 inset -3px -3px 5px #ffffff;

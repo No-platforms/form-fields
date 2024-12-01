@@ -4,11 +4,13 @@
     <title>Formina</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/tabs.css">
+    <link rel="stylesheet" href="assets/css/highlight/styles/default.min.css">
+    <link rel="stylesheet" href="assets/css/highlight/styles/ir-black.css">
 </head>
 <body>
 <popup>
     <h1>Formina: Form Information</h1>
-
+    <button id="refresh-formina" class="btn btn-success bg-gradient-success">Reload Formina</button>
 
 
 <div id="container" class="container">
@@ -27,7 +29,7 @@
                 <ul id="input-list"></ul>            
             </div>
             <div id="tabcontent2" data-tab="2" class="tabcontent">
-                <code id="json-output"></code>
+                <pre><code id="json-output"></code></pre>
             </div>
             <div id="tabcontent3" data-tab="3" class="tabcontent">
                 <ul id="form-info"></ul>
@@ -36,11 +38,23 @@
                 <ul id="cookies-list"></ul>
             </div>
             <div id="tabcontent5" data-tab="5" class="tabcontent">
-                <ul id="generators-list">
-                    <li>
-                        <button id="postman-generator">Postman</button>
-                    </li>
-                </ul>
+                 <button class="btn btn-success bg-gradient-success" id="postman-generator">Download Postman Collection</button>
+                 <div class="row">
+                    <select id="generator-method">
+                        <option value="">Select target language</option>
+                        <option value="curl">Generate Curl</option>
+                        <option value="php-guzzle">Generate PHP Guzzle</option>
+                        <option value="axios">Generate Axios</option>
+                        <option value="java">Generate Java</option>
+                        <option value="go">Generate Go</option>
+                        <option value="c">Generate C</option>
+                        <option value="kotlin">Generate Kotlin</option>
+                        <option value="dart">Generate Dart</option>
+                        <option value="csharp">Generate C#</option>
+                    </select>
+                 </div>
+
+                <pre><code id="generated-code-output"></code></pre>
             </div>
         </div>
 
@@ -62,6 +76,29 @@
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/generators.js"></script>
 <script src="assets/js/tabs.js"></script>
+
+<script src="assets/js/highlight/highlight.min.js"></script>
+<script src="assets/js/highlight/languages/php-template.min.js"></script>
+<script src="assets/js/highlight/languages/plaintext.min.js"></script>
+<script src="assets/js/highlight/languages/bash.js"></script>
+<script src="assets/js/highlight/languages/json.js"></script>
+<script src="assets/js/highlight/languages/python.js"></script>
+<script src="assets/js/highlight/languages/typescript.js"></script>
+<script src="assets/js/highlight/languages/css.js"></script>
+<script src="assets/js/highlight/languages/javascript.js"></script>
+<script src="assets/js/highlight/languages/go.js"></script>
+<script src="assets/js/highlight/languages/c.js"></script>
+<script src="assets/js/highlight/languages/kotlin.js"></script>
+<script src="assets/js/highlight/languages/csharp.js"></script>
+<script src="assets/js/highlight/languages/php.js"></script>
+<script src="assets/js/highlight/languages/ruby.js"></script>
+<script src="assets/js/highlight/languages/rust.js"></script>
+<script src="assets/js/highlight/languages/scss.js"></script>
+<script src="assets/js/highlight/languages/sql.js"></script>
+<script src="assets/js/highlight/languages/swift.js"></script>
+<script src="assets/js/highlight/languages/yaml.js"></script>
+<script src="assets/js/highlight/languages/wasm.js"></script>
+<script src="assets/js/highlight/languages/xml.js"></script>
 <script src="popup.js"></script>
 </body>
 </html>
