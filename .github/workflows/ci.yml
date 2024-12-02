@@ -15,23 +15,26 @@ jobs:
       - name: Zip extension
         run: zip -r formina.zip src
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+      - name: Upload files to existing release
+        uses: actions/github-script@v4
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
+          github-token: ${{ secrets.GIT_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const tag = context.payload.release.tag_name;
 
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./formina.zip
-          asset_name: formina.zip
-          asset_content_type: application/zip
+            // Get the release for this tag
+            const release = await github.repos.getReleaseByTag({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag
+            });
+
+            // Upload the release asset
+            await github.repos.uploadReleaseAsset({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: release.data.id,
+              name: "formina.zip",  // Change this to your file's name
+              data: fs.readFileSync("formina.zip")  // Specify the path to your file
+            });
