@@ -12,19 +12,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build extension
-        run: npm run build
-
       - name: Zip extension
-        run: zip -r formina-${{ github.ref }}.zip dist
+        run: zip -r formina-${{ github.ref }}.zip src
 
       - name: Create Release
         id: create_release
